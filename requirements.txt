@@ -1,0 +1,11 @@
+#安装的依赖
+
+flask
+flask-sqlalchemy
+flask-mysqlclient
+flask_script
+flask-sqlacodegen
+
+
+#Flask Script扩展提供向Flask插入外部脚本的功能，包括运行一个开发用的服务器，使得脚本和系统分开
+#文档 https://flask-script.readthedocs.io/en/latest/

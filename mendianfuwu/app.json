@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/shop/index",
+    "pages/shop/info",
+    "pages/order/index",
+    "pages/cart/index",
+    "pages/my/order_list",
+    "pages/my/order_info",
+    "pages/my/addressList",
+    "pages/my/addressSet",
+    "pages/my/commentList",
+    "pages/my/index",
+    "pages/logs/logs"
+    
+  ],
+  "tabBar": {
+    "color": "#6e6d6b",
+    "selectedColor": "#e64340",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "box-shadow": "0 0 6px 0",
+    "list": [{
+      "pagePath": "pages/shop/index",
+      "text": "首页",
+      "iconPath": "images/nav/home.png",
+      "position": "bottom",
+      "selectedIconPath": "images/nav/home_selected.png"
+    }, {
+      "pagePath": "pages/cart/index",
+      "text": "购物车",
+      "iconPath": "images/nav/order.png",
+      "selectedIconPath": "images/nav/order_selected.png"
+    }, {
+      "pagePath": "pages/my/index",
+      "text": "我的",
+      "iconPath": "images/nav/my.png",
+      "selectedIconPath": "images/nav/my_selected.png"
+    }]
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "智慧门店服务平台",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
