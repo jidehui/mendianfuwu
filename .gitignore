@@ -1,0 +1,17 @@
+# Logs
+logs
+*.log
+*log.*
+*.bak
+*.tmp
+*.tgz
+
+
+# wxParse emojis
+mendianfuwu/mendianfuwu/wxParse/html2json.js
+mendianfuwu/mendianfuwu/wxParse/htmlparser.js
+mendianfuwu/mendianfuwu/wxParse/showdown.js
+mendianfuwu/mendianfuwu/wxParse/wxDiscode.js
+mendianfuwu/mendianfuwu/wxParse/wxParse.js
+mendianfuwu/mendianfuwu/wxParse/wxParse.wxml
+mendianfuwu/mendianfuwu/wxParse/wxParse.wxss
