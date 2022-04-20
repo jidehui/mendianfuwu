@@ -9,7 +9,8 @@ AUTH_COOKIE_NAME = "ime_shop"
 
 # 拦截器过滤
 IGNORE_URLS = [
-    "^/user/login"
+    "^/user/login",
+    "^/api"
 ]
 
 IGNORE_CHECK_LOGIN_URLS = [
@@ -26,4 +27,17 @@ PAGE_DISPLAY = 10
 STATUS_MAPPING = {
     "1": "正常",
     "0": "已删除",
+}
+
+# 小程序端配置
+MINI_APP = {
+    'appid': "wxa3b8aea2f63e25c6",
+    'appkey': '',
+    'paykey': '',
+    'mch_id': '',
+    'callback_url': '/api/order/callback'
+}
+
+APP = {
+    'domain': 'http://192.168.220.137:8899'
 }

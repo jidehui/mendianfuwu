@@ -1,22 +1,28 @@
 /* pages/index/index.js */
 //获取应用实例
-const app = getApp()
-
+const app = getApp();
 Page({
     data: {
-        remind: '加载中', angle: 0, userInfo: {}, regFlag: true
-    }, goToIndex: function () {
+        remind: '加载中',
+        angle: 0,
+        userInfo: {},
+        regFlag: true
+    },
+    goToIndex: function () {
         wx.switchTab({
             url: '/pages/shop/index',
         });
-    }, onLoad: function () {
+    },
+    onLoad: function () {
         wx.setNavigationBarTitle({
             title: app.globalData.shopName
         });
         this.checkLogin();
-    }, onShow: function () {
+    },
+    onShow: function () {
 
-    }, onReady: function () {
+    },
+    onReady: function () {
         var that = this;
         setTimeout(function () {
             that.setData({
@@ -36,7 +42,8 @@ Page({
                 });
             }
         });
-    }, checkLogin: function () {
+    },
+    checkLogin: function () {
         var that = this;
         wx.login({
             success: function (res) {
@@ -47,9 +54,13 @@ Page({
                     return;
                 }
                 wx.request({
-                    url: app.buildUrl('/member/check-reg'), header: app.getRequestHeader(), method: 'POST', data: {
+                    url: app.buildUrl('/member/check-reg'),
+                    header: app.getRequestHeader(),
+                    method: 'POST',
+                    data: {
                         code: res.code
-                    }, success: function (res) {
+                    },
+                    success: function (res) {
                         if (res.data.code != 200) {
                             that.setData({
                                 regFlag: false
@@ -63,7 +74,8 @@ Page({
                 });
             }
         });
-    }, login: function (e) {
+    },
+    login: function (e) {
         var that = this;
         if (!e.detail.userInfo) {
             app.alert({

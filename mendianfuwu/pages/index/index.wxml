@@ -12,13 +12,13 @@
         <image class="wave wave-bg" src="/images/more/wave.png" mode="aspectFill"></image>
       </view>
       <view class="bd">
-         <image class="smalltitle" src="/images/more/confirm-word1.png"></image>
-        <view class="confirm-btn" bindtap='goToIndex'>
-          <text >走吧，逛逛去</text>
+        <image class="smalltitle" src="/images/more/confirm-word1.png"></image>
+        <view class="confirm-btn" bindtap='goToIndex' wx:if="{{regFlag==true}}">
+          <text>走吧,逛逛去</text>
         </view>
-        <!--<button class="confirm-btn"  open-type="getUserInfo" bindgetuserinfo="login" wx:if="{{regFlag==false}}">
-            授权登录
-        </button>-->
+        <button class="confirm-btn" open-type="getUserInfo" bindgetuserinfo="login" wx:if="{{regFlag==false}}">
+          登录
+        </button>
         <text class="copyright">粤ICP备2021032653号</text>
       </view>
     </view>
