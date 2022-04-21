@@ -1,6 +1,6 @@
 /* pages/index/index.js */
 //获取应用实例
-const app = getApp();
+var app = getApp();
 Page({
     data: {
         remind: '加载中',
