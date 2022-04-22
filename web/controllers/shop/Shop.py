@@ -279,7 +279,7 @@ def ops():
     shop_info = Shop.query.filter_by(id=id).first()
     if not shop_info:
         resp['code'] = -1
-        resp['msg'] = "指定美食不存在~~"
+        resp['msg'] = "指定商品不存在~~"
         return jsonify(resp)
 
     if act == "remove":

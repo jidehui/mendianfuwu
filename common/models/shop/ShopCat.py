@@ -13,3 +13,7 @@ class ShopCat(db.Model):
     status = db.Column(db.Integer, nullable=False, server_default=db.FetchedValue(), info='状态 1：有效 0：无效')
     updated_time = db.Column(db.DateTime, nullable=False, server_default=db.FetchedValue(), info='最后一次更新时间')
     created_time = db.Column(db.DateTime, nullable=False, server_default=db.FetchedValue(), info='插入时间')
+
+    @property
+    def status_desc(self):
+        return app.config['STATUS_MAPPING'][str(self.status)]

@@ -151,6 +151,11 @@ var common_ops = {
             _paramUrl = "?" + _paramUrl;
         }
         return url + _paramUrl;
+    },
+    buildPicUrl: function (img_key) {
+        var domain = $(".hidden_layout_wrap input[name=domain]").val();
+        var prefix_url = $(".hidden_layout_wrap input[name=prefix_url]").val();
+        return domain + prefix_url + img_key;
     }
 };
 

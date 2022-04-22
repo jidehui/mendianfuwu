@@ -1,16 +1,6 @@
 {% extends "common/layout_main.html" %}
 {% block content %}
-    <div class="row  border-bottom">
-        <div class="col-lg-12">
-            <div class="tab_title">
-                <ul class="nav nav-pills">
-                    <li class="current">
-                        <a href="{{ buildUrl('/account/index') }}">账户列表</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+{% include "common/tab_account.html" %}
     <div class="row">
         <div class="col-lg-12">
             <form class="form-inline wrap_search">
@@ -19,7 +9,8 @@
                         <select name="status" class="form-control inline">
                             <option value="-1">请选择状态</option>
                             {% for tmp_key in status_mapping %}
-                            <option value="{{ tmp_key }}" {% if tmp_key == search_con['status'] %} selected {% endif %}>{{ status_mapping[tmp_key] }}</option>
+                                <option value="{{ tmp_key }}" {% if tmp_key == search_con['status'] %}
+                                        selected {% endif %}>{{ status_mapping[ tmp_key ] }}</option>
                             {% endfor %}
                         </select>
                     </div>
@@ -66,36 +57,35 @@
                             <td>{{ item.mobile }}</td>
                             <td>{{ item.email }}</td>
                             <td>
-                                <a href="{{ buildUrl('/account/info') }}?id={{ item.uid }}">
+                                <a href="{{ buildUrl('/account/info' ) }}?id={{ item.uid }}">
                                     <i class="fa fa-eye fa-lg"></i>
                                 </a>
 
                                 {% if item.status == 1 %}
-                                <a class="m-l" href="{{ buildUrl('/account/set') }}?id={{ item.uid }}">
-                                    <i class="fa fa-edit fa-lg"></i>
-                                </a>
+                                    <a class="m-l" href="{{ buildUrl('/account/set') }}?id={{ item.uid }}">
+                                        <i class="fa fa-edit fa-lg"></i>
+                                    </a>
 
-                                <a class="m-l remove" href="javascript:void(0);" data="{{ item.uid }}">
-                                    <i class="fa fa-trash fa-lg"></i>
-                                </a>
+                                    <a class="m-l remove" href="javascript:void(0);" data="{{ item.uid }}">
+                                        <i class="fa fa-trash fa-lg"></i>
+                                    </a>
                                 {% else %}
-                                <a class="m-l recover" href="javascript:void(0);" data="{{ item.uid }}">
-                                    <i class="fa fa-rotate-left fa-lg"></i>
-                                </a>
+                                    <a class="m-l recover" href="javascript:void(0);" data="{{ item.uid }}">
+                                        <i class="fa fa-rotate-left fa-lg"></i>
+                                    </a>
                                 {% endif %}
                             </td>
                         </tr>
                     {% endfor %}
                 {% else %}
                     <tr>
-                        <td colspan="5">暂无数据!</td>
+                        <td colspan="5">暂无数据~~</td>
                     </tr>
                 {% endif %}
                 </tbody>
             </table>
-
             <!--分页代码已被封装到统一模板文件中-->
-            {% include "common/pagenation.html" %}
+            {% include 'common/pagenation.html' %}
         </div>
     </div>
 {% endblock %}

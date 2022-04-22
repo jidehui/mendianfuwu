@@ -32,12 +32,35 @@ STATUS_MAPPING = {
 # 小程序端配置
 MINI_APP = {
     'appid': "wxa3b8aea2f63e25c6",
+    'callback_url': '/api/order/callback'
+}
+""" MINI_APP:换成自己的
     'appkey': '',
     'paykey': '',
     'mch_id': '',
-    'callback_url': '/api/order/callback'
+"""
+
+UPLOAD = {
+    'ext': ['jpg', 'gif', 'bmp', 'jpeg', 'png'],
+    'prefix_path': '/web/static/upload/',
+    'prefix_url': '/static/upload/'
 }
 
 APP = {
     'domain': 'http://192.168.220.137:8899'
+}
+
+PAY_STATUS_MAPPING = {
+    "1": "已支付",
+    "-8": "待支付",
+    "0": "已关闭"
+}
+
+PAY_STATUS_DISPLAY_MAPPING = {
+    "0": "订单关闭",
+    "1": "支付成功",
+    "-8": "待支付",
+    "-7": "待发货",
+    "-6": "待确认",
+    "-5": "待评价"
 }

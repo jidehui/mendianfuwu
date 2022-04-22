@@ -131,29 +131,29 @@ def comment():
     data_list = []
     if comment_list:
         member_map = getDictFilterField(Member, Member.id, "id", selectFilterObj(comment_list, "member_id"))
-        food_ids = []
+        shop_ids = []
         for item in comment_list:
-            tmp_food_ids = (item.food_ids[1:-1]).split("_")
+            tmp_food_ids = (item.shop_ids[1:-1]).split("_")
             tmp_food_ids = {}.fromkeys(tmp_food_ids).keys()
-            food_ids = food_ids + list(tmp_food_ids)
+            shop_ids = shop_ids + list(tmp_food_ids)
 
-        food_map = getDictFilterField(Shop, Shop.id, "id", food_ids)
+        shop_map = getDictFilterField(Shop, Shop.id, "id", shop_ids)
 
         for item in comment_list:
             tmp_member_info = member_map[item.member_id]
-            tmp_foods = []
-            tmp_food_ids = (item.food_ids[1:-1]).split("_")
-            for tmp_food_id in tmp_food_ids:
-                tmp_food_info = food_map[int(tmp_food_id)]
-                tmp_foods.append({
-                    'name': tmp_food_info.name,
+            tmp_shops = []
+            tmp_shop_ids = (item.shop_ids[1:-1]).split("_")
+            for tmp_shop_id in tmp_shop_ids:
+                tmp_shop_info = shop_map[int(tmp_shop_id)]
+                tmp_shops.append({
+                    'name': tmp_shop_info.name,
                 })
 
             tmp_data = {
                 "content": item.content,
                 "score": item.score,
                 "member_info": tmp_member_info,
-                "foods": tmp_foods
+                "shops": tmp_shops
             }
             data_list.append(tmp_data)
     resp_data['list'] = data_list

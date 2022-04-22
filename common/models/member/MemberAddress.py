@@ -4,7 +4,7 @@ from sqlalchemy.schema import FetchedValue
 from application import db
 
 
-class MemberAddres(db.Model):
+class MemberAddress(db.Model):
     __tablename__ = 'member_address'
     __table_args__ = (
         db.Index('idx_member_id_status', 'member_id', 'status'),
